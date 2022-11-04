@@ -5,7 +5,7 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('f2wb08lella:server');
+var debug = require('debug')('f2db08lella:server');
 var http = require('http');
 
 /**
