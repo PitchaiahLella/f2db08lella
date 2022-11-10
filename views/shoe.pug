@@ -1,7 +1,7 @@
 extends layout
 block content
         h1= title
-        - var results = [{"Shoe_Name": "Sneakers", "Shoe_Company": "Adidas", "Shoe_Size": 9.0, "Shoe_Rating": 4.7},{"Shoe_Name": "Formals", "Shoe_Company": "Nike", "Shoe_Size": 10.0, "Shoe_Rating": 4.2},{"Shoe_Name": "Causal", "Shoe_Company": "Puma", "Shoe_Size": 11.0, "Shoe_Rating": 4.6}]
+        - var results = [{"Shoe_Name": "Sneakers", "Shoe_Company": "Adidas", "Shoe_Size": 9.0, "Shoe_Rating": 4.7},{"Shoe_Name": "Formals", "Shoe_Company": "Nike", "Shoe_Size": 10.0, "Shoe_Rating": 4.2},{"Shoe_Name": "Causal", "Shoe_Company": "Puma", "Shoe_Size": 11.0, "Shoe_Rating": 4.6},{"Shoe_Name": "Sports", "Shoe_Company": "H&M", "Shoe_Size": 12.0, "Shoe_Rating": 4.1}]
         div.container-fluid 
             div.row 
                 each item, index in results
