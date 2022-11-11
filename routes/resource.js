@@ -18,3 +18,5 @@ router.get('/shoes/:id', shoe_controller.shoe_detail);
 // GET request for list of all shoe items.
 router.get('/shoes', shoe_controller.shoe_list);
 module.exports = router;
+// GET request for one motorcyle.
+router.get('/shoes/:id', shoe_controller.shoe_detail);
