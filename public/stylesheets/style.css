@@ -6,3 +6,8 @@ body {
 a {
   color: #00B7FF;
 }
+
+.shoeAttr { 
+  background-color: yellow; 
+  width: 120px; 
+}
