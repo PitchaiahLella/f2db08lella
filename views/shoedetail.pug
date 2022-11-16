@@ -2,14 +2,14 @@ extends layout
 
 block content 
     h1= title 
-    - let shoeid = toShow.shoe_id 
+    - let id = toShow._id 
     - let Shoe_Name = toShow.Shoe_Name 
     - let Shoe_Company = toShow.Shoe_Company 
     - let Shoe_Size = toShow.Shoe_Size 
     div 
         div.row 
         div(class='shoeAttr mr-3') shoe ID is: 
-        div #{shoeid} 
+        div #{id} 
         div.row 
         div(class='shoeAttr mr-3') shoe Name is: 
         div #{Shoe_Name} 
