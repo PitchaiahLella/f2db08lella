@@ -1,0 +1,21 @@
+extends layout 
+
+block content 
+    h1= title 
+    - let shoeid = toShow.shoe_id 
+    - let Shoe_Name = toShow.Shoe_Name 
+    - let Shoe_Company = toShow.Shoe_Company 
+    - let Shoe_Size = toShow.Shoe_Size 
+    div 
+        div.row 
+        div(class='shoeAttr mr-3') shoe ID is: 
+        div #{shoeid} 
+        div.row 
+        div(class='shoeAttr mr-3') shoe Name is: 
+        div #{Shoe_Name} 
+        div.row 
+        div(class='shoeAttr mr-3') shoe Company is: 
+        div #{Shoe_Company} 
+        div.row 
+        div(class='shoeAttr mr-3') shoe Size is: 
+        div #{Shoe_Size}
