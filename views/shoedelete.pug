@@ -5,16 +5,16 @@ block content
   if (toShow == null) 
     h2 No instance to delete 
   else 
-    - let shoe_id = toShow.shoe_id 
+    - let id = toShow._id 
     - let Shoe_Name = toShow.Shoe_Name 
     - let Shoe_Company = toShow.Shoe_Company 
     - let Shoe_Size = toShow.Shoe_Size 
-    - let actionid = "/resource/shoe/" + shoe_id 
+    - let actionid = "/resource/shoes/" + id 
     script let actionid = "#{actionid}" 
     div 
       div.row 
         div(class='shoeAttr mr-3') shoe ID is: 
-        div #{shoe_id} 
+        div #{id} 
       div.row 
         div(class='shoeAttr mr-3') shoe Name is: 
         div #{Shoe_Name} 

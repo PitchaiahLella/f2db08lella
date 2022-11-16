@@ -2,23 +2,23 @@ extends layout
 
 block content 
   h1= title 
-    - let shoeid = toShow.shoe_id 
+    - let id = toShow._id 
     - let Shoe_Name = toShow.Shoe_Name 
     - let Shoe_Company = toShow.Shoe_Company 
     - let Shoe_Size = toShow.Shoe_Size 
     div.row(class='mb-2') 
-        div.mr-1 ID is 
-        div #{shoeid} 
-    - let actionid = "/resource/shoe/" + shoeid 
+        div.mr-1  ID is 
+        div #{id} 
+    - let actionid = "/resource/shoes/" + id 
     form(id='shoeForm', action= actionid, method="PUT") 
         div.form-group 
             label.shoeAttr(for='Shoe_Name') shoe Name 
             input#Shoe_Name(type='text', name='Shoe_Name', value= Shoe_Name ) 
         div.form-group 
-            label.shoeAttr(for='Shoe_Company') shoe Size 
+            label.shoeAttr(for='Shoe_Company') shoe Company 
             input#Shoe_Company(type='text', name='Shoe_Company', value= Shoe_Company ) 
         div.form-group 
-            label.shoeAttr(for='Shoe_Size') shoe Price 
+            label.shoeAttr(for='Shoe_Size') shoe Size 
             input#Shoe_Size(type='number', name='Shoe_Size', value= Shoe_Size ) 
         input(type="submit") 
     script. 
@@ -27,7 +27,7 @@ block content
         // TODO do something here to show user that form is being submitted 
         fetch(event.target.action, { 
             method: 'PUT', 
-            body: new URLSearchParams(new FormData(event.target)) // event.target is the form 
+            body: new URLSearchParams(new FormData(event.target)) 
         }).then((resp) => { 
             return resp.json(); // or resp.text() or whatever the server sends 
         }).then((body) => { 
