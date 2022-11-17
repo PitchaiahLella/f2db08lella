@@ -1,7 +1,7 @@
 extends layout 
 
 block content 
-    h1= title 
+    h1(class='container-fluid p-5 bg-danger text-success text-center')= title 
     - let id = toShow._id 
     - let Shoe_Name = toShow.Shoe_Name 
     - let Shoe_Company = toShow.Shoe_Company 
@@ -9,17 +9,18 @@ block content
     - let Shoe_Rating = toShow.Shoe_Rating
     div 
         div.row 
+        div(class="container text-center")
         div(class='shoeAttr mr-3') Shoe ID is: 
         div #{id} 
         div.row 
-        div(class='shoeAttr mr-3') Shoe Name is: 
+        div(class='p-2  bg-primary flex-fill shoeAttr mr-3') Shoe Name is: 
         div #{Shoe_Name} 
         div.row 
-        div(class='shoeAttr mr-3') Shoe Company is: 
+        div(class='p-2 bg- danger flex-fill shoeAttr mr-3') Shoe Company is: 
         div #{Shoe_Company} 
         div.row 
-        div(class='shoeAttr mr-3') Shoe Size is: 
+        div(class='p-2 bg-secondary flex-fill shoeAttr mr-3') Shoe Size is: 
         div #{Shoe_Size}
         div.row 
-        div(class='shoeAttr mr-3') Shoe Rating is: 
+        div(class='p-2 flex-fill shoeAttr mr-3') Shoe Rating is: 
         div #{Shoe_Rating}

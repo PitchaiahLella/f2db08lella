@@ -1,6 +1,6 @@
 extends layout
 block content
-        h1= title
+        h1(class='container-fluid p-5 bg-primarary text-success text-center', style= 'background-color:LightGray')= title
         form(id='shoeForm', action="/resource/shoes", method="POST")
             div.form-group
                 label.shoeAttr(for='Shoe_Name') Shoe Name 

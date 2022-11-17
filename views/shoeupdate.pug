@@ -1,7 +1,7 @@
 extends layout 
 
 block content 
-  h1= title 
+  h1(class='container-fluid p-5 bg-danger text-success text-center')= title 
     - let id = toShow._id 
     - let Shoe_Name = toShow.Shoe_Name 
     - let Shoe_Company = toShow.Shoe_Company 

@@ -1,7 +1,7 @@
 extends layout 
 
 block content 
-  h1= title 
+  h1(class='container-fluid p-5 bg-info text-success text-center')= title 
   if (toShow == null) 
     h2 No instance to delete 
   else 
@@ -14,10 +14,10 @@ block content
     script let actionid = "#{actionid}" 
     div 
       div.row 
-        div(class='shoeAttr mr-3') Shoe ID is: 
+        div(class=' bg-primary shoeAttr mr-3') Shoe ID is: 
         div #{id} 
       div.row 
-        div(class='shoeAttr mr-3') Shoe Name is: 
+        div(class='bg-warning shoeAttr mr-3') Shoe Name is: 
         div #{Shoe_Name} 
       div.row 
         div(class='shoeAttr mr-3') Shoe Company  is: 
