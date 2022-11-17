@@ -34,7 +34,7 @@ exports.shoe_create_post = async function(req, res) {
     document.Shoe_Name = req.body.Shoe_Name;
     document.Shoe_Company = req.body.Shoe_Company;
     document.Shoe_Size = req.body.Shoe_Size;
-    //document.Shoe_Rating = req.body.Shoe_Rating; 
+    document.Shoe_Rating = req.body.Shoe_Rating; 
 
     try{ 
         let result = await document.save(); 
@@ -83,10 +83,7 @@ exports.shoe_update_put = async function(req, res) {
     } 
 }; 
   
-// Handle shoe delete form on DELETE. 
-exports.shoe_delete = function(req, res) { 
-    res.send('NOT IMPLEMENTED: shoe delete DELETE ' + req.params.id); 
-}; 
+
 
 // Handle shoe delete on DELETE. 
 exports.shoe_delete = async function(req, res) { 

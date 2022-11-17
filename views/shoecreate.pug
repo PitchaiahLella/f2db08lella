@@ -11,8 +11,12 @@ block content
             div.form-group
                 label.shoeAttr(for='Shoe_Size') Shoe Size
                 input#Shoe_Size(type='number', name='Shoe_Size')
+            div.form-group 
+                label.shoeAttr(for='Shoe_Rating') Shoe Rating
+                input#Shoe_Rating(type='number', name='Shoe_Rating')     
             input(type="submit")
-            script.
+
+        script.
                document.forms['shoeForm'].addEventListener('submit', (event) => {
                 event.preventDefault();
             // TODO do something here to show user that form is being submitted

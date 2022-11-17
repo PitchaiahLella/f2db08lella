@@ -6,20 +6,24 @@ block content
     - let Shoe_Name = toShow.Shoe_Name 
     - let Shoe_Company = toShow.Shoe_Company 
     - let Shoe_Size = toShow.Shoe_Size 
+    - let Shoe_Rating  = toShow.Shoe_Rating 
     div.row(class='mb-2') 
         div.mr-1  ID is 
         div #{id} 
     - let actionid = "/resource/shoes/" + id 
     form(id='shoeForm', action= actionid, method="PUT") 
         div.form-group 
-            label.shoeAttr(for='Shoe_Name') shoe Name 
+            label.shoeAttr(for='Shoe_Name') Shoe Name 
             input#Shoe_Name(type='text', name='Shoe_Name', value= Shoe_Name ) 
         div.form-group 
-            label.shoeAttr(for='Shoe_Company') shoe Company 
+            label.shoeAttr(for='Shoe_Company') Shoe Company 
             input#Shoe_Company(type='text', name='Shoe_Company', value= Shoe_Company ) 
         div.form-group 
-            label.shoeAttr(for='Shoe_Size') shoe Size 
-            input#Shoe_Size(type='number', name='Shoe_Size', value= Shoe_Size ) 
+            label.shoeAttr(for='Shoe_Size') Shoe Size 
+            input#Shoe_Size(type='number', name='Shoe_Size', value= Shoe_Size )
+        div.form-group 
+            label.shoeAttr(for='Shoe_Rating') Shoe Rating 
+            input#Shoe_Rating(type='number', name='Shoe_Rating', value= Shoe_Rating )  
         input(type="submit") 
     script. 
         document.forms['shoeForm'].addEventListener('submit', (event) => { 
