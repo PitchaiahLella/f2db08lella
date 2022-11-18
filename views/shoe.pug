@@ -1,13 +1,16 @@
 extends layout
+
 block content
-        h1= title
-        - var results = results 
-        //- var results = [{"Shoe_Name": "Sneakers", "Shoe_Company"   : "Adidas", "Shoe_Size": 9.0, "Shoe_Rating": 4.7},{"Shoe_Name": "Formals", "Shoe_Company": "Nike", "Shoe_Size": 10.0, "Shoe_Rating": 4.2},{"Shoe_Name": "Causal", "Shoe_Company": "Puma", "Shoe_Size": 11.0, "Shoe_Rating": 4.6},{"Shoe_Name": "Sports", "Shoe_Company": "H&M", "Shoe_Size": 12.0, "Shoe_Rating": 4.1}]
-        div.container-fluid 
-            div.row 
-                each item, index in results
-                    div.col-sm-2(onclick=`buy(${index})`) Shoe Name: #{item["Shoe_Name"]} <br> Shoe Company: #{item["Shoe_Company"]} <br> Shoe Size: #{item["Shoe_Size"]} <br> Shoe Rating: #{item["Shoe_Rating"]}
-            script.
-                function buy(index) {
-                    alert("You purchased item " + index)
-                }                    
+  h1= title
+  - var results = results
+  div(class="container-fluid") 
+    div(class="row m-1") 
+      each item in results  
+        - let destination = `dispatch(\"/shoe/update?id=${item._id}\")` 
+        div(class="row-sm-2", class="m-1") Item #{item.Shoe_Name}(#{item.Shoe_Company}) is #{item.Shoe_Size} 
+          button.btn( class="btn-primary ml-1", onclick= destination) Update 
+   
+  script. 
+    function dispatch(path){ 
+      window.location.href=path 
+    } 
