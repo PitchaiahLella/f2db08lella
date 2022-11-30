@@ -2,10 +2,15 @@ var express = require('express');
 var shoe_controller = require('../controllers/shoe');
 var router = express.Router();
 
-// /* GET home page. */
-// router.get('/', function(req, res, next) {
-//   res.render('shoe', { title: 'Search Results for shoe Class' });
-// });
+// A little function to check if we have an authorized user and continue on 
+// redirect to login. 
+const secured = (req, res, next) => { 
+    if (req.user){ 
+      return next(); 
+    } 
+    req.session.returnTo = req.originalUrl; 
+    res.redirect("/login"); 
+  }
 
 /* GET shoe */ 
 router.get('/', shoe_controller.shoe_view_all_Page ); 
@@ -17,12 +22,12 @@ router.get('/shoes/:id', shoe_controller.shoe_detail);
 router.get('/detail', shoe_controller.shoe_view_one_Page); 
 
 /* GET create shoe page */ 
-router.get('/create', shoe_controller.shoe_create_Page); 
+router.get('/create',secured, shoe_controller.shoe_create_Page); 
 
 /* GET create update page */ 
-router.get('/update', shoe_controller.shoe_update_Page);
+router.get('/update',secured, shoe_controller.shoe_update_Page);
 
 /* GET delete shoe page */ 
-router.get('/delete', shoe_controller.shoe_delete_Page); 
+router.get('/delete',secured, shoe_controller.shoe_delete_Page); 
 
 module.exports = router;
